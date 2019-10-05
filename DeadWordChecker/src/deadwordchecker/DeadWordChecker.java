@@ -27,26 +27,26 @@ public class DeadWordChecker {
         {
             inputUser = in.nextLine();
                         
-            String[] deadwords = {" about how ", " a lot ", " always ", 
-            " and so on ", " and etc. ", " anything "," bad ", 
-            " because ", " 'cause ", " could of ", " 'cuz ", 
-            " due to ", " etc. ", " everything ", " forever ", 
-            " get ", " getting ", " good ", " got ", " gotten ", "had of ",
-            " here are ", " here is ", " I believe ", 
-            " I think ", " in conclusion ", " in my opinion "," just ", " kind of ",
-            " like ", " lottsa ", " major ", " majorly ", " might of ", " never ", "nice ",
-            " nothing ", " ok ", " pretty ", " really ", " should of ", " shows ", " shows that ",
-            " so ", "something ", "somewhat ", " sorta ", " sort of ", " so yeah ", " stuff ",
-            "talks about ", "talks about how ", "talks about why", " there are ", " there is ",
-            " thing ", " 'til ", " 'till ", " til ", " till ", " to me ", "try and", " very ",
-            " would of ", " you ", " yours ", " off of ", " due to the fact ", ". And ",
-            ". Because ", ". But ", ". Finally ", ". First", ". However ",
-            ".I am going to be writing about ", ". In conclusion ",
-            ". Second", ". Then ",". Though ", ". Well ", " appear ",
-            " become ", " feel ", " grow ", " keep ", " look ", " prove ",
-            " remain ", " resemble ", " seem ", " smell ", " sound ",
-            "stay ", "taste ", " turn ", " be ", " am ", " is "," are ", 
-            " was ", " were ", " been ", " being "};
+            String words = " about how , a lot , always , and so on ,"
+                    + " and etc. , anything , bad , because , 'cause ,"
+                    + " could of , 'cuz , due to , etc. , everything , forever ,"
+                    +  " get , getting , good , got , gotten , had of ,"
+                    + " here are , here is , I believe , I think ,"
+                    + " in conclusion , in my opinion , just , kind of , like ,"
+                    + " lottsa , major , majorly , might of , never , nice ,"
+                    + " nothing , ok , pretty , really , should of , shows ,"
+                    + " shows that , something , somewhat , sorta , sort of ,"
+                    + " so yeah , stuff , talks about , talks about how ,"
+                    + " talks about why , there are , there is , thing , 'til ,"
+                    + " 'till , til , till , to me , try and , very , would of ,"
+                    + " you , yours , off of , due to the fact ,. And ,"
+                    + ". Because ,. But ,. Finally ,. First,. However ,"
+                    + ".I am going to be writing about ,. In conclusion ,"
+                    + ". Second,. Then ,. Though ,. Well , appear , become ,"
+                    + " feel , grow , keep , look , prove , remain , resemble ,"
+                    + " seem , smell , sound , stay , taste , turn , be , am ,"
+                    + " is , are , was , were , been , being ";
+            String[] deadwords  = words.split(",");
             for(int i = 0; i<deadwords.length;i++)    
             {
                 isPresent = check(inputUser,deadwords[i]);
@@ -77,12 +77,12 @@ public class DeadWordChecker {
         }
         if(x==1)
         {
-            System.out.println("There is "+x+" use of"+word+"in your writing.");
+            System.out.println("There is "+x+" use of \""+word+"\" in your writing.");
             return true;
         }
         if(x>1)
         {
-            System.out.println("There are "+x+" uses of"+word+"in your writing.");
+            System.out.println("There are "+x+" uses of \""+word+"\" in your writing.");
         }
         return false;
     }
